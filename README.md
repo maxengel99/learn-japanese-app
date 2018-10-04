@@ -1,5 +1,9 @@
 # Learn Japanese App
-This application helps the user learn new languages. It is intended to serve as an aid to their language courses.
+Language is very hard to acquire. This is especially true in when you have so many other obligations to balance with your time. As a result, students strive to find faster and more efficient ways to retain what they learn. From my personal experience, Japanese is a uniquely difficult langauge because it uses multiple alphabets, there are few native speakers here in Nashville to practice with, and Japanese sentence structures differs drastically from English sentence structure.
+
+This application helps the user learn Japanese by making it easy to find the various ways to write an English word, connect the user to language practice partners that are willing to help, and create random sentences to practice with. This covers almost all aspects of Japanese language such as vocabulary, kanji, speaking, and grammar. This should complement well with their coursework because they can review whatever they would like with the application or with their language partner.
+
+The translation part of the application lets the user send an English word and get the possible ways to write out the word. For example, texting the word "tree" will respond with き, 木, and ツリー. The language partner feature lets the user text their skill level and receive the name and contact information of someone that can practice with them. The random sentence generator will send you either a randomly generated English or Japanese sentence, then give you time to translate it, then send you the translated sentence for you to compare your answer with.
 
 # Questions:
 1. What Japanese language courses are you taking, or have taken, and why did you pick these courses?
@@ -17,7 +21,7 @@ This application helps the user learn new languages. It is intended to serve as 
 
 # Answers
 ## Question 1:
-a. I took the intro to Japanese course. I think Japanese sounds pleasing and am interested in the culture.
+a. I took the intro to Japanese course. I think Japanese sounds pleasing and am interested in the culture.<br/>
 b. I am in the advanced Japanese class. I am half Japanese and want to be able to speak to my Japanese family.<br/>
 c. I am in advanced. I love anime.
 
