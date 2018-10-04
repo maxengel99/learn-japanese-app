@@ -81,6 +81,6 @@ b. If there was a random sentence generator, that would be awesome. The textbook
 c. Give me lots of example sentences.
 
 # People Interview
-a. <br/>
+a. Brandon Merrit, Senior, Vanderbilt University, brandon.m.merrit@vanderbilt.edu<br/>
 b. Robert Hopke, Junior, Vanderbilt University, robert.hopke@vanderbilt.edu<br/>
 c.
