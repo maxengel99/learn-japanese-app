@@ -83,4 +83,6 @@ c. Give me lots of example sentences.
 # People Interview
 a. Brandon Merrit, Senior, Vanderbilt University, brandon.m.merrit@vanderbilt.edu<br/>
 b. Robert Hopke, Junior, Vanderbilt University, robert.hopke@vanderbilt.edu<br/>
-c.
+c. Sunny Chennupati, Senior, Vanderbilt University, sai.chennupati@vanderbiltedu
+
+<i>Note - Permission given from interviewees to post their information</i>
