@@ -27,7 +27,7 @@ c. I am in advanced. I love anime.
 
 ## Question 2:
 a. Writing was difficult. I had trouble memorizing the characters and strokes.<br/>
-b. Japanese is completely different than English. Picking it up in college is harder than we are just a kid.<br/>
+b. Japanese is completely different than English. Picking it up in college is harder than when we are just a kid.<br/>
 c. Kanji is the hardest. They are impossible to remember.
 
 ## Question 3:
@@ -86,3 +86,33 @@ b. Robert Hopke, Junior, Vanderbilt University, robert.hopke@vanderbilt.edu<br/>
 c. Sunny Chennupati, Senior, Vanderbilt University, sai.chennupati@vanderbilt.edu
 
 <i>Note - Permission given from interviewees to post their information</i>
+
+## Requirements
+The user wants to quickly translate the words they do not know.<br/>
+The user wants to memorize Kanji succesfully.<br/>
+The user wants to effectively study grammar patterns and sentence structure.<br/>
+
+## Development Approach
+I interviewed people who have taken or are currently taking a Japanese class to gauge how they study and how effective their studying methods are. This gives me insight into what Japanese language app must provide in order to be useful. I got many responses about the difficult of Kanji and the frequency of googling words to get their English translation.
+
+Then put together key features that could be useful for a user. These features include translating an English word into all of its Japanese possibilties, sentence generating for the user to practice with, and connecting a user to Japanese tutors,. I am going to work on these in this order because of their perceived importance. Everybody talked about looking up Japanese words, then most discussed creating sentences to practice grammar with, and nobody talked about connecting the user to a Japanese tutor. The last feature should not be hard to implement, so it is added in case there is time. The other two features are prioritized because they are important and harder to implement.
+
+The development process is going to be based off of the SCRUM approach where I work on user-stories one at time. The user-stories are
+1. Given an English word, retrieve the Japanese translations using the Google Translate API
+2. Find an API or website that can create simple random sentences and return that given a text command.
+3. Create a database of people willing to be Japanese mentors
+
+### User-stories
+#### User-story One
+There is a Google Translate API that is simple to use. You just need to provide it the word and the language and it gives you back the translation. The hard part is getting the API to work in clojure. I will most likely use the interoperability feature of clojure to make the requests using Javascript. After I can make the connection to the API, I will need ot make a text command that can call this function with a given word.
+
+#### User-story Two
+I will need to do some research to find a website that generates simple random words. I found a few after an initial google search but they create a mix of very simple and very complicated sentences. If I cannot find a way to use other resources to create a sentence, I will need to find a way to generate them on my own. Once I get this to work, then the same method of calling a function given a command can be used for this feature.
+
+#### User-story Three
+If time permits, I will add a database with contact information of people that are willing to be Japanese mentors. However, because of scope-creep, there needs to be a notice that this may not be completed by the deadline. This can be an idea for a second version of the application.
+
+### Estimates
+The estimate time for the first feature is about a week, most of it spent on getting the request to the Google Translate API to work. The next part of mapping a command to the function should not be difficult because most of that was implemented in the current applicaction.
+The estimate for the second feature is also a week depending on if I find a good resource to create the sentences. If it cannot be found, then maybe a week and a half.
+The estimate for the third feature is three days, but given that the other two features are more important this user-story may not be resolved in this sprint.
