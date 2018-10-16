@@ -1,0 +1,27 @@
+{
+  "name": "csx278-2018-asgns-1-4",
+  "version": "1.0.0",
+  "description": "Asgn 1 is contained in the master branch of this repo. Complete this assignment and\r make sure that all of your code is committed.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juleswhite/CSx278-2018-Asgns-1-4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/juleswhite/CSx278-2018-Asgns-1-4/issues"
+  },
+  "homepage": "https://github.com/juleswhite/CSx278-2018-Asgns-1-4#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.334.0",
+    "serverless-cljs-plugin": "^0.2.2",
+    "serverless-secrets": "^3.0.0-beta.12"
+  }
+}
