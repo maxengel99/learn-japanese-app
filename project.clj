@@ -9,6 +9,11 @@
                            [thheller/shadow-cljs "2.4.33"]
                            [cljsjs/aws-sdk-js "2.94.0-0"]
                            [clj-http "3.9.1"]
+                           [io.nervous/kvlt "0.1.4"]
+                           [cljs-http "0.1.45"]
+                           [environ "0.5.0"]
+                           [lynxeyes/dotenv "1.0.2"]
+                           [lein-dotenv "1.0.0"]
                            [io.nervous/cljs-lambda "0.3.5"
                             :exclusions [org.clojure/tools.reader
                                          org.clojure/clojurescript
@@ -61,7 +66,7 @@
 
                              :env {:dev true}}}
 
-            :main asgnx.cli 
+            :main asgnx.cli
 
             :cljsbuild
             {:builds {:lambda

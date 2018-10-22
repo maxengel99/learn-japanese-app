@@ -2,7 +2,10 @@
   (:require [clojure.string :as string]
             [clojure.core.async :as async :refer [go chan <! >!]]
             [asgnx.kvstore :as kvstore
-             :refer [put! get! list! remove!]]))
+             :refer [put! get! list! remove!]]
+            [asgnx.http :as http]))
+
+
 
 
 ;; Do not edit!
@@ -442,6 +445,56 @@
   [[(experts-register experts (first args) user-id {})]
    (str user-id " is now an expert on " (first args) ".")])
 
+  ; (def lang-map (hash-map :spanish "es"))
+
+   ;(defn request [text]
+    ;#? (:clj (get (clj-client/get (str   "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&lang=en-"
+    ;                               (second (get text :args))
+    ;                               "&text="
+    ;                               (first (get text :args))) :body
+    ;         :cljs (str "cljs"))])
+   ;;#? (:clj (str "test") :cljs (str "cljs")))
+     ;(get (clj-client/get (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&lang=en-"
+     ;                           (second (get text :args))
+     ;                          "&text="
+     ;                          (first (get text :args))]
+     ;     :body)
+
+(defn my-handler [response]
+  (let [body (:body response) status (:status response)]
+    (if (= 200 status)
+      body
+      (println response))))
+
+(defn translate [text]
+  (http/request text))
+
+  ;(http/disable-logging)
+  ;(http/send-get (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&lang=en-"
+  ;                   (second (get text :args))
+  ;                   "&text="
+  ;                   (first (get text :args))]
+  ;             my-handler)
+
+
+;(let [response (http/request (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&lang=en-"
+  ;                                  (second (get text :args))
+  ;                                  "&text="
+  ;                                  (first (get text :args)) my-handler] (println "testing response") (println response))
+
+
+     ;;(get-in (get (client/get "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&text=money&lang=en-ja") :body)
+      ;;["text"])
+     ;;(get (http/request (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20181011T162540Z.ebefbd687bfa078b.2860aebc9fea214e51dce9f033f51fec0a552afb&lang=en-"
+       ;;                    (second (get text :args))
+         ;;                  "&text="
+           ;;                (first (get text :args)) :body])
+   ;#? (:clj (__)
+   ;   (cljs (__))
+   ;; src/asgnx
+   ; http.clj
+   ; http.cljs
+
 ;; Don't edit!
 (defn stateless [f]
   (fn [_ & args]
@@ -454,7 +507,8 @@
              "office"   (stateless office-hours)
              "expert"   add-expert
              "ask"      ask-experts
-             "answer"   answer-question})
+             "answer"   answer-question
+             "translate" (stateless translate)})
 ;; Asgn 3.
 ;;
 ;; @Todo: Add mappings of the cmds "expert", "ask", and "answer" to
