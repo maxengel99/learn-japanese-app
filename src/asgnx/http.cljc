@@ -42,4 +42,4 @@
 (defn request [text]
   (if (contains? lang-map (create-key-lang text))
     (first (get (parse-response (get-request text)) :text))
-    (str (str (second (get text :args))) " translate is not supported")))
+    (str (str (second (get text :args))) " is not supported")))

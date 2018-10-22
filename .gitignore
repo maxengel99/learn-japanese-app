@@ -18,5 +18,3 @@ pom.xml.asc
 /credentials
 .env
 .env.dev
-package.json
-package-lock.json
