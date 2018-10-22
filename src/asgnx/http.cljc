@@ -4,10 +4,10 @@
             #?(:cljs [cljs-http.client :as clj-client]
                :clj  [clj-http.client :as clj-client])))
 
-;; holds api key for Yandex translation api
+;; Holds api key for Yandex translation api
 (def api-key (env "YANDEX_API_KEY"))
 
-;; contains mappings of language to language code
+;; Contains mappings of language to language code
 (def lang-map (hash-map :spanish "es"
                         :italian "it"
                         :french "fr"
@@ -15,26 +15,31 @@
                         :swedish "sv"
                         :portugese "pt"))
 
-;; creates the string for the given language and text
+;; Turns language into key for map lookup
+(defn create-key-lang [text]
+  (keyword (second (get text :args))))
+
+
+;; Creates the string for the given language and text
 (defn make-url [text]
   (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key="
        (str api-key)
        "&lang=en-"
-       (get lang-map (keyword (second (get text :args))))
+       (get lang-map (create-key-lang text))
        "&text="
        (first (get text :args))))
 
-;; makes the get-request
+;; Makes the get-request
 (defn get-request [text]
   #? (:clj (get (clj-client/get (make-url text)) :body)
        :cljs (get (cljs-client/get url) :body)))
 
-;; gets the translated word from the response
+;; Gets the translated word from the response
 (defn parse-response [response]
   (json/read-str response :key-fn keyword))
 
-;; handles the request from core
+;; Handles the request from core
 (defn request [text]
-  (if (contains? lang-map (keyword (second (get text :args))))
+  (if (contains? lang-map (create-key-lang text))
     (first (get (parse-response (get-request text)) :text))
-    (str "Language not supported")))
+    (str (str (second (get text :args))) " translate is not supported")))
