@@ -1,9 +1,5 @@
 (ns asgnx.http
-  (:require [clojure.string :as string]
-            [clojure.core.async :as async :refer [go chan <! >!]]
-            [asgnx.kvstore :as kvstore
-             :refer [put! get! list! remove!]]
-            [clojure.data.json :as json]
+  (:require [clojure.data.json :as json]
             #?(:clj [dotenv :refer [env app-env]])
             #?(:cljs [cljs-http.client :as clj-client]
                :clj  [clj-http.client :as clj-client])))
@@ -22,10 +18,11 @@
 ;; creates the string for the given language and text
 (defn make-url [text]
   (str "https://translate.yandex.net/api/v1.5/tr.json/translate?key="
-               (str api-key)"&lang=en-"
-                               (get lang-map (keyword (second (get text :args))))
-                               "&text="
-                               (first (get text :args))))
+       (str api-key)
+       "&lang=en-"
+       (get lang-map (keyword (second (get text :args))))
+       "&text="
+       (first (get text :args))))
 
 ;; makes the get-request
 (defn get-request [text]
