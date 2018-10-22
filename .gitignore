@@ -16,3 +16,7 @@ pom.xml.asc
 .hgignore
 .hg/
 /credentials
+.env
+.env.dev
+package.json
+package-lock.json
