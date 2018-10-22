@@ -1,5 +1,5 @@
 (ns asgnx.http
-  (:require [clojure.data.json :as json]
+  (:require #?(:clj [clojure.data.json :as json])
             #?(:clj [dotenv :refer [env app-env]])
             #?(:cljs [cljs-http.client :as clj-client]
                :clj  [clj-http.client :as clj-client])))
