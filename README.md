@@ -134,3 +134,4 @@ If the language cannot be used, then the applications responds with
 ```
 [language] is not supported
 ```
+The languages supported are spanish, french, italian, german, swedish, and portugese. Other Latin based languages can be easily added by adding the language key to the language-map definied in http.cljs.
