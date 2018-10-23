@@ -120,8 +120,22 @@ The estimate for the third feature is three days, but given that the other two f
 ### Testing
 A new test file that tests the api calls, the parsing of the response, and error handling will be needed. This helps ensure that corner cases are covered and helps with maintenance of the code.
 
-### Final Project (10-21-2018)
+### Final Project
 1. I could not make this a Japanese app because the response for a Japanese translation is ??? because Japanese uses a different character set. This obstacle was very difficult to overcome, so I pivoted and made this a general purpose application. The user can ask to translate any word given a list of Latin-based languages such as Spanish, German, French, etc. I was disappointed that I could not make this specific to Japanese, but I learned to do more research into different language support on a computer before proceeding with any language-based application.
 2. The user can text it a word and a language and receive the translated word in the given language. If the language is not supported, the response will indicate so. This uses the Yandex API which provides general purpopse translation capabilities.
 3. Other libraries I used are clj-http for web requests and dotenv to store the Yandex api key.
 4. This does not work on AWS because of the problems in library compatibility. Since the imported libraries run on Java, they do not work with Docker and thus cannot be deployed. I tried resolving this by adding a cljs-http library for the requests, but it was difficult to debug because this node library runs differently than the java library and also cannot be tested locally. I also tried using a kvlt library that works for both Java and JavaScript machines but this runs asynchronously using a callback function. I could not figure out how to block and return the value or deal with promises, so I figured that a better use of time would be to develop my functionality on the local computer instead of spending too much time figuring out the library compatibility issue.
+
+### How to Use
+The command that triggers this functionality is 'translate.' The next argument is the word to be translated. The final argument is the language you want your word translated into. All other arguments after that are ignored.
+```console
+translate [word] [language]
+```
+Example -
+```console
+translate dog spanish
+```
+If the language cannot be used, then the applications responds with
+```
+[language] is not supported
+```
