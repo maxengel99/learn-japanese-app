@@ -1,9 +1,9 @@
 # Learn Japanese App
-Language is very hard to acquire. This is especially true in when you have so many other obligations to balance with your time. As a result, students strive to find faster and more efficient ways to retain what they learn. From my personal experience, Japanese is a uniquely difficult langauge because it uses multiple alphabets, there are few native speakers here in Nashville to practice with, and Japanese sentence structures differs drastically from English sentence structure.
+Language is very hard to acquire. This is especially true in when you have so many other obligations to balance with your time. As a result, students strive to find faster and more efficient ways to retain what they learn. From my personal experience, Japanese is a uniquely difficult langauge because it uses multiple alphabet and Japanese sentence structures differs drastically from English sentence structure.
 
-This application helps the user learn Japanese by making it easy to find the various ways to write an English word, connect the user to language practice partners that are willing to help, and create random sentences to practice with. This covers almost all aspects of Japanese language such as vocabulary, kanji, speaking, and grammar. This should complement well with their coursework because they can review whatever they would like with the application or with their language partner.
+This application helps the user learn Japanese by making it easy to find the various ways to write an English word and create random sentences to practice with. This covers almost all aspects of Japanese language such as vocabulary, kanji, and grammar. This should complement well with their coursework because they can review whatever they would like with the application.
 
-The translation part of the application lets the user send an English word and get the possible ways to write out the word. For example, texting the word "tree" will respond with き, 木, and ツリー. The language partner feature lets the user text their skill level and receive the name and contact information of someone that can practice with them. The random sentence generator will send you either a randomly generated English or Japanese sentence, then give you time to translate it, then send you the translated sentence for you to compare your answer with.
+The translation part of the application lets the user send an English word and get the possible ways to write out the word. For example, texting the word "tree" will respond with き, 木, and ツリー. The random sentence generator will send you either a randomly generated English or Japanese sentence, then give you time to translate it, then send you the translated sentence for you to compare your answer with.
 
 # Questions:
 1. What Japanese language courses are you taking, or have taken, and why did you pick these courses?
@@ -95,8 +95,6 @@ The user wants to effectively study grammar patterns and sentence structure.<br/
 ## Development Approach
 I interviewed people who have taken or are currently taking a Japanese class to gauge how they study and how effective their studying methods are. This gives me insight into what Japanese language app must provide in order to be useful. I got many responses about the difficult of Kanji and the frequency of googling words to get their English translation.
 
-Then put together key features that could be useful for a user. These features include translating an English word into all of its Japanese possibilties, sentence generating for the user to practice with, and connecting a user to Japanese tutors,. I am going to work on these in this order because of their perceived importance. Everybody talked about looking up Japanese words, then most discussed creating sentences to practice grammar with, and nobody talked about connecting the user to a Japanese tutor. The last feature should not be hard to implement, so it is added in case there is time. The other two features are prioritized because they are important and harder to implement.
-
 The development process is going to be based off of the SCRUM approach where I work on user-stories one at time. The user-stories are
 1. Given an English word, retrieve the Japanese translations using the Google Translate API
 2. Find an API or website that can create simple random sentences and return that given a text command.
@@ -109,13 +107,9 @@ There is a Google Translate API that is simple to use. You just need to provide 
 #### User-story Two
 I will need to do some research to find a website that generates simple random words. I found a few after an initial google search but they create a mix of very simple and very complicated sentences. If I cannot find a way to use other resources to create a sentence, I will need to find a way to generate them on my own. Once I get this to work, then the same method of calling a function given a command can be used for this feature.
 
-#### User-story Three
-If time permits, I will add a database with contact information of people that are willing to be Japanese mentors. However, because of scope-creep, there needs to be a notice that this may not be completed by the deadline. This can be an idea for a second version of the application.
-
 ### Estimates
 The estimate time for the first feature is about a week, most of it spent on getting the request to the Google Translate API to work. The next part of mapping a command to the function should not be difficult because most of that was implemented in the current applicaction.
 The estimate for the second feature is also a week depending on if I find a good resource to create the sentences. If it cannot be found, then maybe a week and a half.
-The estimate for the third feature is three days, but given that the other two features are more important this user-story may not be resolved in this sprint.
 
 ### Testing
 A new test file that tests the api calls, the parsing of the response, and error handling will be needed. This helps ensure that corner cases are covered and helps with maintenance of the code.
